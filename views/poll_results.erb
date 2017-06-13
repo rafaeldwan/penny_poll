@@ -1,0 +1,42 @@
+<% content_for :head  do %>
+  <script src="/javascripts/chartkick.js"></script>
+  <script src="https://www.google.com/jsapi"></script>
+<% end %>
+
+<% content_for :page_label do %>
+  <h1>Results for "<%= @poll.name %>"</h1>
+  <% if @poll.description && @poll.description != '' %>
+    <p>"<%= @poll.description %>"</p>
+  <% end %>
+  <hr/>
+<% end %>
+<div id= "text" style="float: left; width: 33%;">
+  <ul>
+    <% @poll.options.each do |name, votes| %>
+      <li><%= name %>: <%= votes %></li>
+    <% end %>
+  </ul>
+  <% voters = @poll.vote_count / @poll.max_votes %>
+  <% if voters == 1 %>
+    <p><em><%= @poll.vote_count %> votes cast by 1 user.</em></p>
+  <% else %>
+    <p><em><%= @poll.vote_count %> votes cast by <%= voters %> users.</em></p>
+  <% end %>
+  <a href= "/">Home</a>
+  <% if @permissions.include?('vote') %>
+    <%== build_actions(@poll.path) %>
+  <% elsif signed_in? %>
+    You voted! Thanks.
+    <%== build_actions(@poll.path) %>
+  <% else %>
+    <a href = "/user/login">Sign in</a> or <a href = "/user/new">sign up</a> to vote.
+  <% end %>
+</div>
+<div id="chart" style="float:right; width:66%;">
+  <%== pie_chart @chart_data, library: {backgroundColor: "#f9f9f9", is3D: true, legend:{position: 'bottom', maxLines: 3}}  %>
+</div>
+
+
+
+
+

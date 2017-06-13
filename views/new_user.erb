@@ -1,0 +1,11 @@
+<% content_for :page_label do %>
+<h1>Sign up to vote and create your own polls!</h1>
+<% end %>
+<form method = "post" action = "/user/new">
+  <label for="username">Username:</label><input name="username" type="text"  value="<%= params[:username] %>">
+  <label for="pass1">Password:</label><input name="pass1" type="password" >
+  <label for="pass2">Re-enter Password:</label><input name="pass2" type="password" >
+  </br>
+  <button type="submit">Sign Up</button>
+  <a href = "/">Cancel</a>
+</form>

@@ -1,0 +1,25 @@
+<% content_for :page_label do %>
+<h1><%= @poll.name %></h1>
+<% if @poll.description && @poll.description != "" %>
+  <p>"<%= @poll.description %>"</p>
+<% end %>
+<% end %>
+<h4>You have <%= @poll.max_votes %> votes!</h4>
+<p>Distribute them any way you like - put them all in one option, split them fifty/fifty, etc.</p>
+<form method="post" action="/polls/<%= params[:poll] %>/vote">
+  <dl><% @poll.options.each do |name, votes|
+      fill_value = params[:votes][name] if params[:votes] %>
+    <dt>
+      <label for="votes[<%= name %>]"><%= name %></label>
+    </dt>
+    <dd>
+      <input name="votes[<%= name %>]" type = "number" min="0" max="<%= @poll.max_votes %>" placeholder="0" value= "<%= fill_value %>">
+    </dd>
+  <% end %>
+  </dl>
+  <fieldset class="actions">
+    <input type="submit" value="Vote!">
+    <a href="/">Cancel</a>
+  </fieldset>
+</form>
+<a href= "/">Home</a> <a href="/polls/<%= params[:poll] %>/results">View results</a>

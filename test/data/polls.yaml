@@ -1,0 +1,77 @@
+---
+ae5a6dd5-d7c9-4297-8803-946659e7b954:
+  :name: Government Budget
+  :path: government_budget
+  :author: b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c
+  :created: '2017-06-07 00:45:39 -0700'
+  :votes_per_user: 10
+  :description: What are your priorities for the Federal budget?
+  :options:
+    education: 28
+    environment: 19
+    healthcare: 34
+    foreign aid: 11
+    military: 4
+    law enforcement: 4
+4ff932f5-56b5-48a5-94e2-6509c8497878:
+  :name: Rate the animals!
+  :path: rate_the_animals
+  :author: 1ec98d39-1ef1-483c-8c7e-1bcca7f98314
+  :created: 2017-06-11 02:29:42.008835000 -07:00
+  :votes_per_user: 25
+  :description: What are the best animals?
+  :options:
+    The whales!: 9
+    The gorillas!: 8
+    The dogs!: 4
+    The cats!: 13
+    Eels!: 1
+    All the bugs except the bees!: 0
+    The bees!: 7
+    The wolves!: 6
+    Cows!: 2
+456abc:
+  :name: What's the best decade?
+  :path: best_decade
+  :author: b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c
+  :created: '2017-06-05 00:45:39 -0700'
+  :votes_per_user: 5
+  :description: There are so many good decades, how do you rate them?
+  :options:
+    1960s: 0
+    1970s: 0
+    1920s: 0
+    1990s: 0
+:totesanid:
+  :name: Best monster name
+  :path: monster_name
+  :author: b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c
+  :created: '2017-06-05 00:45:39 -0700'
+  :votes_per_user: 8
+  :options:
+    Garglarr: 10
+    Smurg: 4
+    Brnughrix the destroyer of worlds: 9
+    Covfefe: 1
+e4317b23-161d-4299-a798-58e4be12dcac:
+  :name: Wow! a long name! Will it work?
+  :path: wow_a_long_name_wi
+  :author: 6bf60593-61a4-4b6d-8f3d-10da8a0a2065
+  :created: 2017-06-09 15:57:45.330025000 -07:00
+  :votes_per_user: 4
+  :description: One wonders.
+  :options:
+    an option: 3
+    another option: 4
+    the third option: 1
+19ca85cd-5079-40d7-a509-a2e9fbca3fed:
+  :name: Where's Waldo?
+  :path: wheres_waldo
+  :author: cf5a1f06-47ec-4799-a8a2-1cb0ada1392d
+  :created: 2017-06-11 17:06:22.508027000 -07:00
+  :votes_per_user: 10
+  :description: Where could he be?
+  :options:
+    Spaceship: 5
+    Ancient Rome: 22
+    Zoo: 3

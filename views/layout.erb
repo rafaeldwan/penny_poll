@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <%== yield_content :head %>
+  <script src="/javascripts/jquery-3.2.1.js"></script>
+  <script src="/javascripts/application.js"></script>
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+
+  <link rel="stylesheet" href="/stylesheets/sakura.css">
+  <link rel="stylesheet" href="/stylesheets/normalize.css">
+  <link rel="stylesheet" href="/stylesheets/application.css">
+  <title>Penny polls!</title>
+</head>
+<body>
+<% if signed_in? %>
+  <form class="inline" method="post" action="/user/logout" >
+    <p class="user-status">Signed in as <%= @user.username %>
+    <button type="submit">Sign Out</button>
+    </p>
+  </form>
+<% else %>
+<form class="inline" method="get" action="/user/login" >
+    <button type="submit">Sign In</button>
+  </form>
+  <form class="inline" method="get" action="/user/new" >
+    <button type="submit">Sign Up</button>
+  </form>
+<% end %>
+
+<%== yield_content :page_label %>
+
+<% if session[:error] %>
+  <div class="flash error">
+    <p><%= session.delete(:error) %></p>
+  </div>
+<% elsif session[:success] %>
+  <div class="flash success">
+    <p><%= session.delete(:success) %></p>
+  </div>
+<% end %>
+  <%== yield %>
+</body>
+</html>

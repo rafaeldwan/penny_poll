@@ -1,0 +1,166 @@
+---
+b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
+  :username: admin
+  :password: "$2a$10$SVGxFU/yFNyZ6/vp1rB4FuPLGXJJ6ChAx1UoLCMoox1.0yWueomSe"
+  :created: '2017-06-07 00:45:39 -0700'
+  :votes:
+    ae5a6dd5-d7c9-4297-8803-946659e7b954:
+      :name: Government Budget
+      :timestamp: 2017-06-08 00:49:25.895880000 -07:00
+      :votes:
+        education: 0
+        environment: 5
+        healthcare: 5
+        foreign aid: 0
+        military: 0
+        law enforcement: 0
+    2c6cf888-4e13-4e7d-beb8-3a81e7adf419:
+      :name: Topcomicstrips
+      :timestamp: 2017-06-11 00:46:04.505455000 -07:00
+      :votes:
+        Calvin and Hobbes: 2
+        The Far Side: 1
+        Bloom County: 2
+        Pogo: 0
+        Peanuts: 0
+    :totesanid:
+      :name: Best monster name
+      :timestamp: 2017-06-11 01:59:31.743777000 -07:00
+      :votes:
+        Garglarr: 4
+        Smurg: 2
+        Brnughrix the destroyer of worlds: 1
+        Covfefe: 1
+    c92d3bfc-c3f2-44ef-9bcc-396b349007c9:
+      :name: Test
+      :timestamp: 2017-06-11 02:07:42.308506000 -07:00
+      :votes:
+        test: 3
+        test1: 0
+        test2: 4
+        test3: 3
+        test4: 0
+    19ca85cd-5079-40d7-a509-a2e9fbca3fed:
+      :name: Where's Waldo?
+      :timestamp: 2017-06-11 18:16:18.553688000 -07:00
+      :votes:
+        Spaceship: 4
+        Ancient Rome: 3
+        Zoo: 3
+6bf60593-61a4-4b6d-8f3d-10da8a0a2065:
+  :username: johnny
+  :password: "$2a$10$moDA0dV/FB7sJcAT.DIjc.itzUXKp14TiHBWTY4RLkRsiqUu.Sa6."
+  :created: 2017-06-08 17:57:01.310816000 -07:00
+  :votes:
+    ae5a6dd5-d7c9-4297-8803-946659e7b954:
+      :name: Government Budget
+      :timestamp: 2017-06-09 00:45:25.532959000 -07:00
+      :votes:
+        education: 2
+        environment: 3
+        healthcare: 3
+        foreign aid: 1
+        military: 0
+        law enforcement: 1
+    e4317b23-161d-4299-a798-58e4be12dcac:
+      :name: Wow! a long name! Will it work?
+      :timestamp: 2017-06-09 15:58:19.933146000 -07:00
+      :votes:
+        an option: 3
+        another option: 1
+        the third option: 0
+    19ca85cd-5079-40d7-a509-a2e9fbca3fed:
+      :name: Where's Waldo?
+      :timestamp: 2017-06-11 18:18:34.393340000 -07:00
+      :votes:
+        Spaceship: 0
+        Ancient Rome: 10
+        Zoo: 0
+1ec98d39-1ef1-483c-8c7e-1bcca7f98314:
+  :username: johnnyboy
+  :password: "$2a$10$moDA0dV/FB7sJcAT.DIjc.itzUXKp14TiHBWTY4RLkRsiqUu.Sa6."
+  :created: 2017-06-08 18:00:23.640247000 -07:00
+  :votes:
+    ae5a6dd5-d7c9-4297-8803-946659e7b954:
+      :name: Government Budget
+      :timestamp: 2017-06-08 18:20:47.766555000 -07:00
+      :votes:
+        education: 0
+        environment: 5
+        healthcare: 5
+        foreign aid: 0
+        military: 0
+        law enforcement: 0
+    e4317b23-161d-4299-a798-58e4be12dcac:
+      :name: Wow! a long name! Will it work?
+      :timestamp: 2017-06-11 02:24:27.234443000 -07:00
+      :votes:
+        an option: 0
+        another option: 3
+        the third option: 1
+    2c6cf888-4e13-4e7d-beb8-3a81e7adf419:
+      :name: Topcomicstrips
+      :timestamp: 2017-06-11 02:26:42.185397000 -07:00
+      :votes:
+        Calvin and Hobbes: 2
+        The Far Side: 1
+        Bloom County: 1
+        Pogo: 1
+        Peanuts: 0
+    4ff932f5-56b5-48a5-94e2-6509c8497878:
+      :name: Rate the animals!
+      :timestamp: 2017-06-11 02:30:43.926129000 -07:00
+      :votes:
+        The whales!: 5
+        The gorillas!: 3
+        The dogs!: 1
+        The cats!: 10
+        Eels!: 1
+        All the bugs except the bees!: 0
+        The bees!: 4
+        The wolves!: 1
+        Cows!: 0
+    :totesanid:
+      :name: Best monster name
+      :timestamp: 2017-06-11 14:26:27.860288000 -07:00
+      :votes:
+        Garglarr: 3
+        Smurg: 0
+        Brnughrix the destroyer of worlds: 5
+        Covfefe: 0
+cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
+  :username: tiana
+  :password: "$2a$10$P5IZ6EkR7XrBSRmpDipvPuNylZDn6pOuE.Bsd2dbc5v.Q6rFike2a"
+  :created: 2017-06-08 18:37:41.072323000 -07:00
+  :votes:
+    ae5a6dd5-d7c9-4297-8803-946659e7b954:
+      :name: Government Budget
+      :timestamp: 2017-06-08 18:39:41.719840000 -07:00
+      :votes:
+        education: 3
+        environment: 3
+        healthcare: 3
+        foreign aid: 1
+        military: 0
+        law enforcement: 0
+    :totesanid:
+      :name: Best monster name
+      :timestamp: 2017-06-11 14:15:40.623223000 -07:00
+      :votes:
+        Garglarr: 3
+        Smurg: 2
+        Brnughrix the destroyer of worlds: 3
+        Covfefe: 0
+    4ff932f5-56b5-48a5-94e2-6509c8497878:
+      :name: Rate the animals!
+      :timestamp: 2017-06-11 17:01:38.902941000 -07:00
+      :votes:
+        The whales!: 4
+        The gorillas!: 5
+        The dogs!: 3
+        The cats!: 3
+        Eels!: 0
+        All the bugs except the bees!: 0
+        The bees!: 3
+        The wolves!: 5
+        Cows!: 2

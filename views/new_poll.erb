@@ -1,0 +1,24 @@
+<% content_for :page_label do %>
+<h1>Create your own penny poll!</h1>
+<% end %>
+<form method = "post" action = "/polls/new/add_options">
+  <label for="number_of_options">Change numbers of options (min. 3):</label>
+  <input name="number_of_options" type="number" style="width: 4em" min="3" value="<%= @number_of_options %>">
+  <button type="submit">Update</button>
+  <em>Warning: any other data will be lost on update</em>
+</form>
+<form method = "post" action = "/polls/new">
+  <label for="name">Poll name:</label><input name="name" type="text", style="width: 20em"  value="<%= params[:name] %>">
+  <label for="description">Description (optional):</label><textarea name="description" cols = "50"><%= params[:description] %></textarea>
+  <label for="votes_per_user">Votes per user (min 3):</label><input name="votes_per_user" type="number" style="width: 4em" min="3" value=<%= params[:votes_per_user] || 10 %>>
+  </br>
+  <% counter = 1
+  @number_of_options.times do
+    fill_value = params[:options][counter.to_s] if params[:options] %>
+    <label for="options[<%= counter %>]">Option <%= counter %> name:</label><input name="options[<%= counter %>]" type="text"  value="<%= fill_value %>">
+    <% counter += 1
+  end %>
+  </br>
+  <button type="submit">Create Poll!</button>
+  <a href = "/">Cancel</a>
+</form>

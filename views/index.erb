@@ -1,0 +1,21 @@
+<% content_for :page_label do %>
+<h1>Penny Poll</h1>
+<p><em>A distributive voting experiment</em></p>
+<% end %>
+
+<ul>
+  <% @polls.each do |id, data| %>
+    <li>
+      <strong><%= data[:name]%></strong>
+      <em><%= data[:options].values.reduce(:+) %> votes cast</em>
+      <a href = "polls/<%= data[:path] %>/results">View Results</a><%== build_actions(data[:path], @polls) %>
+    </li>
+    <hr>
+  <% end %>
+</ul>
+
+<% if signed_in? %>
+  <a href = "polls/new">Create a poll</a>
+<% else %>
+  <a href = "user/login">login</a>
+<% end %>

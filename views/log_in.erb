@@ -1,0 +1,10 @@
+<% content_for :page_label do %>
+<h1>Log in</h1>
+<% end %>
+<form method = "post" action = "/user/login">
+  <label for="username">Username:</label><input name="username" type="text"  value="<%= params[:username] %>">
+  <label for="password">Password:</label><input name="password" type="password" >
+  </br>
+  <button type="submit">Sign In</button>
+  <a href = "/">Cancel</a>
+</form>
