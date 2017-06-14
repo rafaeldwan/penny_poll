@@ -7,17 +7,17 @@ ae5a6dd5-d7c9-4297-8803-946659e7b954:
   :votes_per_user: 10
   :description: What are your priorities for the Federal budget?
   :options:
-    education: 31
-    environment: 23
-    healthcare: 37
-    foreign aid: 11
+    education: 33
+    environment: 26
+    healthcare: 41
+    foreign aid: 12
     military: 4
     law enforcement: 4
 4ff932f5-56b5-48a5-94e2-6509c8497878:
   :name: Rate the animals!
   :path: rate_the_animals
   :author: 1ec98d39-1ef1-483c-8c7e-1bcca7f98314
-  :created: 2017-06-11 02:29:42.008835000 -07:00
+  :created: 2017-06-11 09:29:42.008835000 +00:00
   :votes_per_user: 25
   :description: What are the best animals?
   :options:
@@ -49,26 +49,26 @@ ae5a6dd5-d7c9-4297-8803-946659e7b954:
   :created: '2017-06-05 00:45:39 -0700'
   :votes_per_user: 8
   :options:
-    Garglarr: 10
-    Smurg: 4
-    Brnughrix the destroyer of worlds: 9
-    Covfefe: 9
+    Garglarr: 13
+    Smurg: 5
+    Brnughrix the destroyer of worlds: 10
+    Covfefe: 12
 19ca85cd-5079-40d7-a509-a2e9fbca3fed:
   :name: Where's Waldo?
   :path: wheres_waldo
   :author: cf5a1f06-47ec-4799-a8a2-1cb0ada1392d
-  :created: 2017-06-11 17:06:22.508027000 -07:00
+  :created: 2017-06-12 00:06:22.508027000 +00:00
   :votes_per_user: 10
   :description: Where could he be?
   :options:
-    Spaceship: 10
-    Ancient Rome: 36
-    Zoo: 4
+    Spaceship: 14
+    Ancient Rome: 38
+    Zoo: 8
 3dec26bb-8fd1-4909-9ddc-7c33a2ee27c3:
   :name: What super power?
   :path: what_super_power
   :author: '08fb524b-7233-468a-80ce-99ffe70bb561'
-  :created: 2017-06-12 22:42:29.582101361 -07:00
+  :created: 2017-06-13 05:42:29.582101361 +00:00
   :votes_per_user: 10
   :description: If you could get one by being bitten by your favorite radioactive
     animal, which would it be?
@@ -82,7 +82,7 @@ c72612b2-4fda-4b3c-8395-cee91d766024:
   :name: Do You love Me ?
   :path: do_you_love_me_
   :author: d480f5e7-2dd8-4623-8a5b-d1f8066e62a0
-  :created: 2017-06-13 00:46:29.247019230 -07:00
+  :created: 2017-06-13 07:46:29.247019230 +00:00
   :votes_per_user: 10
   :description: ''
   :options:
@@ -90,3 +90,15 @@ c72612b2-4fda-4b3c-8395-cee91d766024:
     Absolutely: 8
     Of course: 7
     Yup: 1
+a0e831de-cd2f-414c-b962-c27c6db2d9f3:
+  :name: What color is the sky?
+  :path: what_color_is_the_sk
+  :author: ea966c12-6aa9-46b8-8fee-c9eec7058697
+  :created: 2017-06-14 03:51:54.421135587 +00:00
+  :votes_per_user: 10
+  :description: Who knows where it will land in the spectrum today.
+  :options:
+    Blue: 2
+    Orangey-red: 0
+    Dark as night: 0
+    It's falling...run!: 8

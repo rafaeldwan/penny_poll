@@ -6,7 +6,7 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
   :votes:
     ae5a6dd5-d7c9-4297-8803-946659e7b954:
       :name: Government Budget
-      :timestamp: 2017-06-08 00:49:25.895880000 -07:00
+      :timestamp: 2017-06-08 07:49:25.895880000 +00:00
       :votes:
         education: 0
         environment: 5
@@ -16,7 +16,7 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         law enforcement: 0
     2c6cf888-4e13-4e7d-beb8-3a81e7adf419:
       :name: Topcomicstrips
-      :timestamp: 2017-06-11 00:46:04.505455000 -07:00
+      :timestamp: 2017-06-11 07:46:04.505455000 +00:00
       :votes:
         Calvin and Hobbes: 2
         The Far Side: 1
@@ -25,7 +25,7 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         Peanuts: 0
     :totesanid:
       :name: Best monster name
-      :timestamp: 2017-06-11 01:59:31.743777000 -07:00
+      :timestamp: 2017-06-11 08:59:31.743777000 +00:00
       :votes:
         Garglarr: 4
         Smurg: 2
@@ -33,7 +33,7 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         Covfefe: 1
     c92d3bfc-c3f2-44ef-9bcc-396b349007c9:
       :name: Test
-      :timestamp: 2017-06-11 02:07:42.308506000 -07:00
+      :timestamp: 2017-06-11 09:07:42.308506000 +00:00
       :votes:
         test: 3
         test1: 0
@@ -42,14 +42,14 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         test4: 0
     19ca85cd-5079-40d7-a509-a2e9fbca3fed:
       :name: Where's Waldo?
-      :timestamp: 2017-06-11 18:16:18.553688000 -07:00
+      :timestamp: 2017-06-12 01:16:18.553688000 +00:00
       :votes:
         Spaceship: 4
         Ancient Rome: 3
         Zoo: 3
     3dec26bb-8fd1-4909-9ddc-7c33a2ee27c3:
       :name: What super power?
-      :timestamp: 2017-06-12 23:12:30.555463933 -07:00
+      :timestamp: 2017-06-13 06:12:30.555463933 +00:00
       :votes:
         invisible mode ("We need someone to fix the websi... -- where's Dave? Anyone seen him?"): 5
         strength (as in carrying your car to the garage when it breaks): 3
@@ -58,7 +58,7 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         map and reduce: 0
     456abc:
       :name: What's the best decade?
-      :timestamp: 2017-06-13 03:43:19.980662285 -07:00
+      :timestamp: 2017-06-13 10:43:19.980662285 +00:00
       :votes:
         1960s: 1
         1970s: 0
@@ -67,11 +67,11 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
 6bf60593-61a4-4b6d-8f3d-10da8a0a2065:
   :username: johnny
   :password: "$2a$10$moDA0dV/FB7sJcAT.DIjc.itzUXKp14TiHBWTY4RLkRsiqUu.Sa6."
-  :created: 2017-06-08 17:57:01.310816000 -07:00
+  :created: 2017-06-09 00:57:01.310816000 +00:00
   :votes:
     ae5a6dd5-d7c9-4297-8803-946659e7b954:
       :name: Government Budget
-      :timestamp: 2017-06-09 00:45:25.532959000 -07:00
+      :timestamp: 2017-06-09 07:45:25.532959000 +00:00
       :votes:
         education: 2
         environment: 3
@@ -81,21 +81,21 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         law enforcement: 1
     e4317b23-161d-4299-a798-58e4be12dcac:
       :name: Wow! a long name! Will it work?
-      :timestamp: 2017-06-09 15:58:19.933146000 -07:00
+      :timestamp: 2017-06-09 22:58:19.933146000 +00:00
       :votes:
         an option: 3
         another option: 1
         the third option: 0
     19ca85cd-5079-40d7-a509-a2e9fbca3fed:
       :name: Where's Waldo?
-      :timestamp: 2017-06-11 18:18:34.393340000 -07:00
+      :timestamp: 2017-06-12 01:18:34.393340000 +00:00
       :votes:
         Spaceship: 0
         Ancient Rome: 10
         Zoo: 0
     456abc:
       :name: What's the best decade?
-      :timestamp: 2017-06-13 03:46:06.949648000 -07:00
+      :timestamp: 2017-06-13 10:46:06.949648000 +00:00
       :votes:
         1960s: 1
         1970s: 1
@@ -103,7 +103,7 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         1990s: 3
     c72612b2-4fda-4b3c-8395-cee91d766024:
       :name: Do You love Me ?
-      :timestamp: 2017-06-13 03:47:07.437454000 -07:00
+      :timestamp: 2017-06-13 10:47:07.437454000 +00:00
       :votes:
         'Yes': 3
         Absolutely: 5
@@ -112,11 +112,11 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
 1ec98d39-1ef1-483c-8c7e-1bcca7f98314:
   :username: johnnyboy
   :password: "$2a$10$moDA0dV/FB7sJcAT.DIjc.itzUXKp14TiHBWTY4RLkRsiqUu.Sa6."
-  :created: 2017-06-08 18:00:23.640247000 -07:00
+  :created: 2017-06-09 01:00:23.640247000 +00:00
   :votes:
     ae5a6dd5-d7c9-4297-8803-946659e7b954:
       :name: Government Budget
-      :timestamp: 2017-06-08 18:20:47.766555000 -07:00
+      :timestamp: 2017-06-09 01:20:47.766555000 +00:00
       :votes:
         education: 0
         environment: 5
@@ -126,14 +126,14 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         law enforcement: 0
     e4317b23-161d-4299-a798-58e4be12dcac:
       :name: Wow! a long name! Will it work?
-      :timestamp: 2017-06-11 02:24:27.234443000 -07:00
+      :timestamp: 2017-06-11 09:24:27.234443000 +00:00
       :votes:
         an option: 0
         another option: 3
         the third option: 1
     2c6cf888-4e13-4e7d-beb8-3a81e7adf419:
       :name: Topcomicstrips
-      :timestamp: 2017-06-11 02:26:42.185397000 -07:00
+      :timestamp: 2017-06-11 09:26:42.185397000 +00:00
       :votes:
         Calvin and Hobbes: 2
         The Far Side: 1
@@ -142,7 +142,7 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         Peanuts: 0
     4ff932f5-56b5-48a5-94e2-6509c8497878:
       :name: Rate the animals!
-      :timestamp: 2017-06-11 02:30:43.926129000 -07:00
+      :timestamp: 2017-06-11 09:30:43.926129000 +00:00
       :votes:
         The whales!: 5
         The gorillas!: 3
@@ -155,7 +155,7 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         Cows!: 0
     :totesanid:
       :name: Best monster name
-      :timestamp: 2017-06-11 14:26:27.860288000 -07:00
+      :timestamp: 2017-06-11 21:26:27.860288000 +00:00
       :votes:
         Garglarr: 3
         Smurg: 0
@@ -164,11 +164,11 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
 cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
   :username: tiana
   :password: "$2a$10$P5IZ6EkR7XrBSRmpDipvPuNylZDn6pOuE.Bsd2dbc5v.Q6rFike2a"
-  :created: 2017-06-08 18:37:41.072323000 -07:00
+  :created: 2017-06-09 01:37:41.072323000 +00:00
   :votes:
     ae5a6dd5-d7c9-4297-8803-946659e7b954:
       :name: Government Budget
-      :timestamp: 2017-06-08 18:39:41.719840000 -07:00
+      :timestamp: 2017-06-09 01:39:41.719840000 +00:00
       :votes:
         education: 3
         environment: 3
@@ -178,7 +178,7 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
         law enforcement: 0
     :totesanid:
       :name: Best monster name
-      :timestamp: 2017-06-11 14:15:40.623223000 -07:00
+      :timestamp: 2017-06-11 21:15:40.623223000 +00:00
       :votes:
         Garglarr: 3
         Smurg: 2
@@ -186,7 +186,7 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
         Covfefe: 0
     4ff932f5-56b5-48a5-94e2-6509c8497878:
       :name: Rate the animals!
-      :timestamp: 2017-06-11 17:01:38.902941000 -07:00
+      :timestamp: 2017-06-12 00:01:38.902941000 +00:00
       :votes:
         The whales!: 4
         The gorillas!: 5
@@ -199,14 +199,14 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
         Cows!: 2
     19ca85cd-5079-40d7-a509-a2e9fbca3fed:
       :name: Where's Waldo?
-      :timestamp: 2017-06-12 20:33:33.056083000 -07:00
+      :timestamp: 2017-06-13 03:33:33.056083000 +00:00
       :votes:
         Spaceship: 0
         Ancient Rome: 10
         Zoo: 0
     3dec26bb-8fd1-4909-9ddc-7c33a2ee27c3:
       :name: What super power?
-      :timestamp: 2017-06-12 23:07:14.366478000 -07:00
+      :timestamp: 2017-06-13 06:07:14.366478000 +00:00
       :votes:
         invisible mode ("We need someone to fix the websi... -- where's Dave? Anyone seen him?"): 2
         strength (as in carrying your car to the garage when it breaks): 3
@@ -216,11 +216,11 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
 6324293c-4fe7-4eec-b798-9a1237805b8f:
   :username: Bobloblaw
   :password: "$2a$10$Ho4K5Z/y.pKEFxGszcnrNOyN5qzNsTse2KytfrFINWK5RDOFOcTua"
-  :created: 2017-06-12 22:19:08.522182980 -07:00
+  :created: 2017-06-13 05:19:08.522182980 +00:00
   :votes:
     4ff932f5-56b5-48a5-94e2-6509c8497878:
       :name: Rate the animals!
-      :timestamp: 2017-06-12 23:27:14.189383944 -07:00
+      :timestamp: 2017-06-13 06:27:14.189383944 +00:00
       :votes:
         The whales!: 0
         The gorillas!: 0
@@ -233,7 +233,7 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
         Cows!: 0
     :totesanid:
       :name: Best monster name
-      :timestamp: 2017-06-12 23:28:16.589249192 -07:00
+      :timestamp: 2017-06-13 06:28:16.589249192 +00:00
       :votes:
         Garglarr: 0
         Smurg: 0
@@ -242,11 +242,11 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
 '08fb524b-7233-468a-80ce-99ffe70bb561':
   :username: someone
   :password: "$2a$10$4ltTlre5saNsXl9O05t.n.KKOCzVQiR7ijOlHCduVBEngSFmao8SS"
-  :created: 2017-06-12 22:22:47.018272114 -07:00
+  :created: 2017-06-13 05:22:47.018272114 +00:00
   :votes:
     456abc:
       :name: What's the best decade?
-      :timestamp: 2017-06-12 22:23:12.785694582 -07:00
+      :timestamp: 2017-06-13 05:23:12.785694582 +00:00
       :votes:
         1960s: 2
         1970s: 2
@@ -254,14 +254,14 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
         1990s: 1
     19ca85cd-5079-40d7-a509-a2e9fbca3fed:
       :name: Where's Waldo?
-      :timestamp: 2017-06-12 22:24:18.162626445 -07:00
+      :timestamp: 2017-06-13 05:24:18.162626445 +00:00
       :votes:
         Spaceship: 5
         Ancient Rome: 4
         Zoo: 1
     4ff932f5-56b5-48a5-94e2-6509c8497878:
       :name: Rate the animals!
-      :timestamp: 2017-06-12 22:25:04.803245276 -07:00
+      :timestamp: 2017-06-13 05:25:04.803245276 +00:00
       :votes:
         The whales!: 15
         The gorillas!: 5
@@ -274,7 +274,7 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
         Cows!: 0
     ae5a6dd5-d7c9-4297-8803-946659e7b954:
       :name: Government Budget
-      :timestamp: 2017-06-12 22:52:55.749823584 -07:00
+      :timestamp: 2017-06-13 05:52:55.749823584 +00:00
       :votes:
         education: 3
         environment: 4
@@ -284,7 +284,7 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
         law enforcement: 0
     3dec26bb-8fd1-4909-9ddc-7c33a2ee27c3:
       :name: What super power?
-      :timestamp: 2017-06-12 22:54:04.327220537 -07:00
+      :timestamp: 2017-06-13 05:54:04.327220537 +00:00
       :votes:
         invisible mode ("We need someone to fix the websi... -- where's Dave? Anyone seen him?"): 1
         strength (as in carrying your car to the garage when it breaks): 2
@@ -294,13 +294,61 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
 d480f5e7-2dd8-4623-8a5b-d1f8066e62a0:
   :username: hangus
   :password: "$2a$10$PXUZomW1.8f5fXMKnKp7e.npantfwRT9VowGSNwnH/01vrzYurnYq"
-  :created: 2017-06-13 00:45:32.137268203 -07:00
+  :created: 2017-06-13 07:45:32.137268203 +00:00
   :votes:
     c72612b2-4fda-4b3c-8395-cee91d766024:
       :name: Do You love Me ?
-      :timestamp: 2017-06-13 00:47:13.983021300 -07:00
+      :timestamp: 2017-06-13 07:47:13.983021300 +00:00
       :votes:
         'Yes': 1
         Absolutely: 3
         Of course: 5
         Yup: 1
+459c74d0-ed4d-4071-971a-e2effb96715b:
+  :username: david
+  :password: "$2a$10$Z1p9jGnorVe7KntCeZR5f.b/Qx/vljr5AJRB0df1noWi1Dnggv34i"
+  :created: 2017-06-13 15:49:32.517958599 +00:00
+  :votes:
+    :totesanid:
+      :name: Best monster name
+      :timestamp: 2017-06-13 15:51:41.728970414 +00:00
+      :votes:
+        Garglarr: 3
+        Smurg: 1
+        Brnughrix the destroyer of worlds: 1
+        Covfefe: 3
+6561e3ee-25b2-4a9d-aa2c-87e1c3b45db2:
+  :username: jacob
+  :password: "$2a$10$ALwZ0JDZAwJwYHoas184buJfJJZjkYrHXDefMstIH6.4kKyCByMqe"
+  :created: 2017-06-13 17:25:31.132122214 +00:00
+  :votes:
+    ae5a6dd5-d7c9-4297-8803-946659e7b954:
+      :name: Government Budget
+      :timestamp: 2017-06-13 17:26:08.582285815 +00:00
+      :votes:
+        education: 2
+        environment: 3
+        healthcare: 4
+        foreign aid: 1
+        military: 0
+        law enforcement: 0
+ea966c12-6aa9-46b8-8fee-c9eec7058697:
+  :username: paragraph
+  :password: "$2a$10$kRMjH1feWa3TAQmQ/CxAi.Zsd/E3PEcYcPxS3zwmvZhTpblhD7/HC"
+  :created: 2017-06-14 03:45:36.895612732 +00:00
+  :votes:
+    19ca85cd-5079-40d7-a509-a2e9fbca3fed:
+      :name: Where's Waldo?
+      :timestamp: 2017-06-14 03:50:21.910587009 +00:00
+      :votes:
+        Spaceship: 4
+        Ancient Rome: 2
+        Zoo: 4
+    a0e831de-cd2f-414c-b962-c27c6db2d9f3:
+      :name: What color is the sky?
+      :timestamp: 2017-06-14 03:53:53.309885173 +00:00
+      :votes:
+        Blue: 2
+        Orangey-red: 0
+        Dark as night: 0
+        It's falling...run!: 8
