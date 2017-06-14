@@ -47,6 +47,23 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         Spaceship: 4
         Ancient Rome: 3
         Zoo: 3
+    3dec26bb-8fd1-4909-9ddc-7c33a2ee27c3:
+      :name: What super power?
+      :timestamp: 2017-06-12 23:12:30.555463933 -07:00
+      :votes:
+        invisible mode ("We need someone to fix the websi... -- where's Dave? Anyone seen him?"): 5
+        strength (as in carrying your car to the garage when it breaks): 3
+        being able to watch really sad movies without crying: 0
+        breathe underwater: 2
+        map and reduce: 0
+    456abc:
+      :name: What's the best decade?
+      :timestamp: 2017-06-13 03:43:19.980662285 -07:00
+      :votes:
+        1960s: 1
+        1970s: 0
+        1920s: 0
+        1990s: 4
 6bf60593-61a4-4b6d-8f3d-10da8a0a2065:
   :username: johnny
   :password: "$2a$10$moDA0dV/FB7sJcAT.DIjc.itzUXKp14TiHBWTY4RLkRsiqUu.Sa6."
@@ -76,6 +93,22 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         Spaceship: 0
         Ancient Rome: 10
         Zoo: 0
+    456abc:
+      :name: What's the best decade?
+      :timestamp: 2017-06-13 03:46:06.949648000 -07:00
+      :votes:
+        1960s: 1
+        1970s: 1
+        1920s: 0
+        1990s: 3
+    c72612b2-4fda-4b3c-8395-cee91d766024:
+      :name: Do You love Me ?
+      :timestamp: 2017-06-13 03:47:07.437454000 -07:00
+      :votes:
+        'Yes': 3
+        Absolutely: 5
+        Of course: 2
+        Yup: 0
 1ec98d39-1ef1-483c-8c7e-1bcca7f98314:
   :username: johnnyboy
   :password: "$2a$10$moDA0dV/FB7sJcAT.DIjc.itzUXKp14TiHBWTY4RLkRsiqUu.Sa6."
@@ -171,3 +204,103 @@ cf5a1f06-47ec-4799-a8a2-1cb0ada1392d:
         Spaceship: 0
         Ancient Rome: 10
         Zoo: 0
+    3dec26bb-8fd1-4909-9ddc-7c33a2ee27c3:
+      :name: What super power?
+      :timestamp: 2017-06-12 23:07:14.366478000 -07:00
+      :votes:
+        invisible mode ("We need someone to fix the websi... -- where's Dave? Anyone seen him?"): 2
+        strength (as in carrying your car to the garage when it breaks): 3
+        being able to watch really sad movies without crying: 0
+        breathe underwater: 5
+        map and reduce: 0
+6324293c-4fe7-4eec-b798-9a1237805b8f:
+  :username: Bobloblaw
+  :password: "$2a$10$Ho4K5Z/y.pKEFxGszcnrNOyN5qzNsTse2KytfrFINWK5RDOFOcTua"
+  :created: 2017-06-12 22:19:08.522182980 -07:00
+  :votes:
+    4ff932f5-56b5-48a5-94e2-6509c8497878:
+      :name: Rate the animals!
+      :timestamp: 2017-06-12 23:27:14.189383944 -07:00
+      :votes:
+        The whales!: 0
+        The gorillas!: 0
+        The dogs!: 0
+        The cats!: 25
+        Eels!: 0
+        All the bugs except the bees!: 0
+        The bees!: 0
+        The wolves!: 0
+        Cows!: 0
+    :totesanid:
+      :name: Best monster name
+      :timestamp: 2017-06-12 23:28:16.589249192 -07:00
+      :votes:
+        Garglarr: 0
+        Smurg: 0
+        Brnughrix the destroyer of worlds: 0
+        Covfefe: 8
+'08fb524b-7233-468a-80ce-99ffe70bb561':
+  :username: someone
+  :password: "$2a$10$4ltTlre5saNsXl9O05t.n.KKOCzVQiR7ijOlHCduVBEngSFmao8SS"
+  :created: 2017-06-12 22:22:47.018272114 -07:00
+  :votes:
+    456abc:
+      :name: What's the best decade?
+      :timestamp: 2017-06-12 22:23:12.785694582 -07:00
+      :votes:
+        1960s: 2
+        1970s: 2
+        1920s: 0
+        1990s: 1
+    19ca85cd-5079-40d7-a509-a2e9fbca3fed:
+      :name: Where's Waldo?
+      :timestamp: 2017-06-12 22:24:18.162626445 -07:00
+      :votes:
+        Spaceship: 5
+        Ancient Rome: 4
+        Zoo: 1
+    4ff932f5-56b5-48a5-94e2-6509c8497878:
+      :name: Rate the animals!
+      :timestamp: 2017-06-12 22:25:04.803245276 -07:00
+      :votes:
+        The whales!: 15
+        The gorillas!: 5
+        The dogs!: 0
+        The cats!: 0
+        Eels!: 0
+        All the bugs except the bees!: 0
+        The bees!: 5
+        The wolves!: 0
+        Cows!: 0
+    ae5a6dd5-d7c9-4297-8803-946659e7b954:
+      :name: Government Budget
+      :timestamp: 2017-06-12 22:52:55.749823584 -07:00
+      :votes:
+        education: 3
+        environment: 4
+        healthcare: 3
+        foreign aid: 0
+        military: 0
+        law enforcement: 0
+    3dec26bb-8fd1-4909-9ddc-7c33a2ee27c3:
+      :name: What super power?
+      :timestamp: 2017-06-12 22:54:04.327220537 -07:00
+      :votes:
+        invisible mode ("We need someone to fix the websi... -- where's Dave? Anyone seen him?"): 1
+        strength (as in carrying your car to the garage when it breaks): 2
+        being able to watch really sad movies without crying: 0
+        breathe underwater: 5
+        map and reduce: 2
+d480f5e7-2dd8-4623-8a5b-d1f8066e62a0:
+  :username: hangus
+  :password: "$2a$10$PXUZomW1.8f5fXMKnKp7e.npantfwRT9VowGSNwnH/01vrzYurnYq"
+  :created: 2017-06-13 00:45:32.137268203 -07:00
+  :votes:
+    c72612b2-4fda-4b3c-8395-cee91d766024:
+      :name: Do You love Me ?
+      :timestamp: 2017-06-13 00:47:13.983021300 -07:00
+      :votes:
+        'Yes': 1
+        Absolutely: 3
+        Of course: 5
+        Yup: 1

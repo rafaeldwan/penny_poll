@@ -3,14 +3,10 @@ ENV['RACK_ENV'] = 'test'
 
 require 'simplecov'
 SimpleCov.start
-
 require 'minitest/autorun'
 require 'rack/test'
-
 require 'minitest/reporters'
-
 Minitest::Reporters.use!
-
 require_relative '../penny_poll'
 
 class AppTest < Minitest::Test
@@ -25,11 +21,11 @@ class AppTest < Minitest::Test
   end
 
   def admin_session
-    { 'rack.session' => { user_id: "b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c" } }
+    { 'rack.session' => { user_id: 'b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c' } }
   end
 
   def user_session
-    { 'rack.session' => { user_id: "1ec98d39-1ef1-483c-8c7e-1bcca7f98314" } }
+    { 'rack.session' => { user_id: '1ec98d39-1ef1-483c-8c7e-1bcca7f98314' } }
   end
 
   def setup
@@ -51,25 +47,25 @@ class AppTest < Minitest::Test
     get '/polls'
     assert_equal 200, last_response.status
 
-    assert_includes last_response.body, "Government Budget"
-    assert_includes last_response.body, "login"
+    assert_includes last_response.body, 'Government Budget'
+    assert_includes last_response.body, 'login'
   end
 
   def test_page_polls_logged_in
     get '/polls', {}, user_session
-    assert_includes last_response.body, "vote"
+    assert_includes last_response.body, 'vote'
   end
 
   def test_page_polls_admin
     get '/polls', {}, admin_session
-    assert_includes last_response.body, "reset"
+    assert_includes last_response.body, 'reset'
   end
 
   def test_poll_results_page
     get '/polls/government_budget/results'
-    assert_includes last_response.body, "Results for \"Government Budget\""
-    assert_includes last_response.body, "education: 28"
-    assert_includes last_response.body, "100 votes cast by 10 users"
+    assert_includes last_response.body, 'Results for "Government Budget"'
+    assert_includes last_response.body, 'education: 28'
+    assert_includes last_response.body, '100 votes cast by 10 users'
 
     # need javascript chart test
   end
@@ -77,19 +73,19 @@ class AppTest < Minitest::Test
   def test_poll_results_page_author
     get '/polls/rate_the_animals/results', {}, user_session
     assert_equal 200, last_response.status
-    assert_includes last_response.body, "Delete"
+    assert_includes last_response.body, 'Delete'
   end
 
   def test_poll_results_page_admin
     get '/polls/wow_a_long_name_wi/results', {}, admin_session
-    assert_includes last_response.body, "Reset"
+    assert_includes last_response.body, 'Reset'
   end
 
   def test_poll_results_page_short_url_redirect
     get '/polls/government_budget'
-    assert_equal last_response.status, 302
+    assert_equal 302, last_response.status
     follow_redirect!
-    assert_includes last_response.body, "education: 28"
+    assert_includes last_response.body, 'education: 28'
   end
 
   def test_poll_vote_page_log_out_redirect
@@ -105,11 +101,11 @@ class AppTest < Minitest::Test
   def test_vote_page
     get '/polls/wheres_waldo/vote', {}, user_session
     assert_equal 200, last_response.status
-    assert_includes last_response.body, "input name=\"votes[Ancient Rome]"
+    assert_includes last_response.body, 'input name="votes[Ancient Rome]'
   end
 
   def test_vote_process
-    post '/polls/best_decade/vote', {votes:{'1990s' => '5'}}, user_session
+    post '/polls/best_decade/vote', { votes: { '1990s' => '5' } }, user_session
 
     assert_equal 302, last_response.status
     assert_equal 'Your votes have been recorded!', session[:success]
@@ -125,11 +121,11 @@ class AppTest < Minitest::Test
   end
 
   def test_vote_count_errors
-    post '/polls/best_decade/vote', {votes:{'1990s' => '4', '1960s' => '2'}}, user_session
+    post '/polls/best_decade/vote', { votes: { '1990s' => '4', '1960s' => '2' } }, user_session
     assert_equal 422, last_response.status
     assert_includes last_response.body, 'You cast 6 votes.'
 
-    post '/polls/best_decade/vote', {votes:{'1990s' => '3'}}, user_session
+    post '/polls/best_decade/vote', { votes: { '1990s' => '3' } }, user_session
     assert_equal 422, last_response.status
     assert_includes last_response.body, 'You used 3 votes.'
   end
@@ -140,7 +136,6 @@ class AppTest < Minitest::Test
   end
 
   def test_new_user_signup
-    # copies the user file, creates the new user, then restores the file from copy
     post '/user/new', username: 'testy', pass1: 'tests', pass2: 'tests'
 
     assert_equal 302, last_response.status
@@ -160,12 +155,12 @@ class AppTest < Minitest::Test
     post '/user/new', username: 'testy', pass1: 'aa', pass2: 'aa'
 
     assert_equal 422, last_response.status
-    assert_includes last_response.body, 'Passwords must be longer than 5 characters'
+    assert_includes last_response.body, 'Passwords must be at least 5 characters'
     assert_nil session[:user]
   end
 
   def test_new_user_dupe_username
-    post '/user/new', username: 'admin', pass1: 'test', pass2: 'not the same'
+    post '/user/new', username: 'admin', pass1: 'test', pass2: 'test'
     assert_includes last_response.body, 'Sorry, that name has already been taken'
     assert_equal 422, last_response.status
     assert_includes last_response.body, 'admin'
@@ -184,22 +179,22 @@ class AppTest < Minitest::Test
 
   def test_user_login_page
     get '/user/login'
-    assert_includes last_response.body, "<label for=\"username\">"
+    assert_includes last_response.body, '<label for="username">'
     get 'user/login', {}, user_session
     assert_equal 302, last_response.status
-    assert_equal session[:error], "You are already logged in."
+    assert_equal session[:error], 'You are already logged in.'
   end
 
   def test_user_login_process
-    post '/user/login', username: "admin", password: "secret"
+    post '/user/login', username: 'admin', password: 'secret'
     assert_equal 'b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c', session[:user_id]
   end
 
   def test_user_login_error
-    post '/user/login', username: "admin", password: "wrong"
-    post '/user/login', username: "wrong", password: "secret"
+    post '/user/login', username: 'admin', password: 'wrong'
+    post '/user/login', username: 'wrong', password: 'secret'
     assert_nil session[:user_id]
-    assert_includes last_response.body, "Invalid Credentials"
+    assert_includes last_response.body, 'Invalid Credentials'
   end
 
   def test_user_signout
@@ -211,7 +206,7 @@ class AppTest < Minitest::Test
 
   def test_new_poll_page
     get '/polls/new', {}, user_session
-    assert_includes last_response.body, "Update"
+    assert_includes last_response.body, 'Update'
   end
 
   def test_new_poll_page_logged_out
@@ -220,131 +215,135 @@ class AppTest < Minitest::Test
   end
 
   def test_new_poll_add_options
-    post '/polls/new/add_options', {number_of_options: 5}, user_session
-    assert_includes last_response.body, "Option 5 name:"
+    post '/polls/new/add_options', { number_of_options: 5 }, user_session
+    assert_includes last_response.body, 'Option 5 name:'
   end
 
   def test_new_poll_add_options_logged_out
-    post '/polls/new/add_options', {number_of_options: 5}
+    post '/polls/new/add_options', number_of_options: 5
     assert_equal last_response.status, 302
   end
 
   def test_new_poll_process
-    post '/polls/new', {name: "test! a test! with a long name!",
-                        votes_per_user: '3',
-                        description: "a fake description",
-                        options: {"1" => "jelly", "2" => "jam", "3" => "preserves", "4" => "marmalade"} },
-                        user_session
-    assert_equal session[:success], "Your new poll was created!"
+    post '/polls/new', { name: 'test! a test! with a long name!',
+                         votes_per_user: '3',
+                         description: 'a fake description',
+                         options: { '1' => 'jelly', '2' => 'jam', '3' =>
+                         'preserves', '4' => 'marmalade' } }, user_session
+
+    assert_equal session[:success], 'Your new poll was created!'
 
     follow_redirect!
-    assert_includes last_response.body, "0 votes cast by 0 users."
+    assert_includes last_response.body, '0 votes cast by 0 users.'
   end
 
   def test_new_poll_process_dupe_name
     2.times do
-      post '/polls/new', {name: "Government Budget",
-                        votes_per_user: '3',
-                        description: "a fake description",
-                        options: {"1" => "jelly", "2" => "jam", "3" => "preserves", "4" => "marmalade"} },
-                        user_session
-      assert_equal session[:success], "Your new poll was created!"
+      post '/polls/new', { name: 'Government Budget',
+                           votes_per_user: '3',
+                           description: 'a fake description',
+                           options: { '1' => 'jelly', '2' => 'jam', '3' =>
+                           'preserves', '4' => 'marmalade' } }, user_session
+
+      assert_equal session[:success], 'Your new poll was created!'
     end
     get '/polls/government_budget_2/results'
     assert_equal 200, last_response.status
   end
 
   def test_new_poll_process_logged_out
-    post '/polls/new', {name: "test! a test! with a long name!",
-                        votes_per_user: '3',
-                        description: "a fake description",
-                        options: {"1" => "jelly", "2" => "jam", "3" => "preserves", "4" => "marmalade"} }
+    post '/polls/new', name: 'test! a test! with a long name!',
+                       votes_per_user: '3',
+                       description: 'a fake description',
+                       options: { '1' => 'jelly', '2' => 'jam',
+                                  '3' => 'preserves', '4' => 'marmalade' }
     assert_equal session[:error], 'You must be signed in to create a poll.'
     assert_equal last_response.status, 302
   end
 
   def test_new_poll_error_empty_name_and_poll_form_entry_persistence
-    post '/polls/new', { name: "    ",
+    post '/polls/new', { name: '    ',
                          votes_per_user: '3',
-                         description: "a fake description",
-                         options: {"1" => "jelly", "2" => "jam", "3" => "preserves", "4" => "marmalade", "5" => "PEANUT BUTTER"} },
-                        user_session
+                         description: 'a fake description',
+                         options: { '1' => 'jelly', '2' => 'jam',
+                                    '3' => 'preserves', '4' => 'marmalade',
+                                    '5' => 'PEANUT BUTTER' } }, user_session
     assert_equal last_response.status, 422
     assert_includes last_response.body, 'Sorry, poll name must be between 1 and 150 characters.'
-    assert_includes last_response.body, "name=\"options[5]\" type=\"text\"  value=\"PEANUT BUTTER\""
+    assert_includes last_response.body, 'name="options[5]" type="text"  value="PEANUT BUTTER"'
   end
 
   def test_new_poll_error_name_too_long
-    name = "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like bac"
+    name = 'One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like bac'
     post '/polls/new', { name: name,
                          votes_per_user: '3',
-                         description: "a fake description",
-                         options: {"1" => "jelly", "2" => "jam", "3" => "preserves", "4" => "marmalade", "5" => "PEANUT BUTTER"} },
-                        user_session
+                         description: 'a fake description',
+                         options: { '1' => 'jelly', '2' => 'jam',
+                                    '3' => 'preserves', '4' => 'marmalade',
+                                    '5' => 'PEANUT BUTTER' } }, user_session
     assert_equal last_response.status, 422
     assert_includes last_response.body, 'Sorry, poll name must be between 1 and 150 characters.'
   end
 
   def test_new_poll_error_too_few_options
-    post '/polls/new', { name: "bubba",
+    post '/polls/new', { name: 'bubba',
                          votes_per_user: '3',
-                         description: "a fake description",
-                         options: {"1" => "jelly", "2" => "jam"} },
-                        user_session
+                         description: 'a fake description',
+                         options: { '1' => 'jelly', '2' =>
+                         'jam' } }, user_session
     assert_equal last_response.status, 422
     assert_includes last_response.body, 'Sorry, polls must have at least 3 options.'
   end
 
   def test_new_poll_error_empty_option_name
-    post '/polls/new', { name: "bubba",
+    post '/polls/new', { name: 'bubba',
                          votes_per_user: '3',
-                         description: "a fake description",
-                         options: {"1" => "jelly", "2" => "jam", "3" => "   " } },
-                        user_session
+                         description: 'a fake description',
+                         options: { '1' => 'jelly', '2' => 'jam',
+                                    '3' => '   ' } }, user_session
     assert_equal last_response.status, 422
-    assert_includes last_response.body, "Sorry, option names must be between 1 and 150 characters."
+    assert_includes last_response.body, 'Sorry, option names must be between 1 and 150 characters.'
   end
 
   def test_new_poll_error_option_name_too_long
-    name = "One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like bac"
-    post '/polls/new', { name: "bubba",
+    name = 'One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin. He lay on his armour-like bac'
+    post '/polls/new', { name: 'bubba',
                          votes_per_user: '3',
-                         description: "a fake description",
-                         options: {"1" => "jelly", "2" => "jam", "3" => name } },
-                        user_session
+                         description: 'a fake description',
+                         options: { '1' => 'jelly', '2' => 'jam', '3' =>
+                         name } }, user_session
     assert_equal last_response.status, 422
-    assert_includes last_response.body, "Sorry, option names must be between 1 and 150 characters."
+    assert_includes last_response.body, 'Sorry, option names must be between 1 and 150 characters.'
   end
 
   def test_new_poll_error_option_name_dupe
-    post '/polls/new', { name: "bubba",
+    post '/polls/new', { name: 'bubba',
                          votes_per_user: '3',
-                         description: "a fake description",
-                         options: {"1" => "jelly", "2" => "jam", "3" => "jelly" } },
-                        user_session
+                         description: 'a fake description',
+                         options: { '1' => 'jelly', '2' => 'jam', '3' =>
+                         'jelly', '4' => 'nutella' } }, user_session
     assert_equal last_response.status, 422
-    assert_includes last_response.body, "Sorry, all option names must be unique."
+    assert_includes last_response.body, 'Sorry, all option names must be unique.'
   end
 
   def test_new_poll_error_not_enough_votes
-    post '/polls/new', { name: "bubba",
+    post '/polls/new', { name: 'bubba',
                          votes_per_user: '1',
-                         description: "a fake description",
-                         options: {"1" => "jelly", "2" => "jam", "3" => "preserves", "4" => "marmalade" } },
-                        user_session
+                         description: 'a fake description',
+                         options: { '1' => 'jelly', '2' => 'jam', '3' =>
+                         'preserves', '4' => 'marmalade' } }, user_session
     assert_equal last_response.status, 422
-    assert_includes last_response.body, "Sorry, you must give users at least 3 votes."
+    assert_includes last_response.body, 'Sorry, you must give users at least 3 votes.'
   end
 
   def test_poll_delete
-
     get '/polls'
-    assert_includes last_response.body, "Rate the animals!"
+    assert_includes last_response.body, 'Rate the animals!'
 
     post '/polls/rate_the_animals/delete', {}, user_session
     assert_equal last_response.status, 302
     follow_redirect!
-    refute_includes last_response.body, "Rate the animals!"
+    refute_includes last_response.body, 'Rate the animals!'
   end
 
   def test_poll_delete_error_signed_out_not_author
@@ -357,18 +356,18 @@ class AppTest < Minitest::Test
   end
 
   def test_poll_reset
-    get "/polls/government_budget/vote", {}, admin_session
+    get '/polls/government_budget/vote', {}, admin_session
     assert_equal 302, last_response.status
 
     post '/polls/government_budget/reset'
 
     assert_equal last_response.status, 302
-    assert_equal session[:success], "Poll has been reset."
+    assert_equal session[:success], 'Poll has been reset.'
 
-    get "/polls"
+    get '/polls'
     assert_includes last_response.body, "<strong>Government Budget</strong>\n      <em>0 votes cast</em>"
 
-    get "/polls/government_budget/vote"
+    get '/polls/government_budget/vote'
     assert_equal 200, last_response.status
   end
 

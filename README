@@ -5,5 +5,6 @@ Users can create polls and assign a number of votes per user.
 When voting, users can distribute their votes however they wish:
 all votes in one option, 50/50 or any other way.
 
-This app will probably break if it gets too many users at once since
-no database was used.
+This app is partially in exercise in not using a database
+and will probably freak out if it gets too many users doing
+too many things at once.

@@ -65,10 +65,10 @@ end
 def save_data(file, data)
   if ENV['RACK_ENV'] == 'test'
     local = File.expand_path("../test/data/#{file}", __FILE__)
-    File.open(local, 'w') { |file| file.write(YAML.dump(data)) }
+    File.open(local, 'w') { |open_file| open_file.write(YAML.dump(data)) }
   else
     local = File.expand_path("../data/#{file}", __FILE__)
-    File.open(local, 'w') { |file| file.write(YAML.dump(data)) }
+    File.open(local, 'w') { |open_file| open_file.write(YAML.dump(data)) }
 
     if USE_GOOGLE_DRIVE
       remote = google_session.file_by_title(file.to_s)
@@ -105,7 +105,7 @@ class User
     @votes = our_guy[:votes]
   end
 
-  # creates, stores, and logs in new user
+  # creates and stores new user
   def self.create(username, password)
     users = read_user_data
 
@@ -119,7 +119,7 @@ class User
     save_user_data(users)
   end
 
-  # returns error string if username taken or password1 and 2 don't match'
+  # returns user creation error string
   def self.creation_error(username, pass1, pass2)
     if username_taken?(username)
       'Sorry, that name has already been taken.'
@@ -128,7 +128,7 @@ class User
     elsif pass1 != pass2
       'Passwords must match. Please re-enter.'
     elsif pass1.size < 5
-      'Passwords must be longer than 5 characters'
+      'Passwords must be at least 5 characters'
     end
   end
 
@@ -147,10 +147,10 @@ class User
       votes: {}
     }
 
-    new_records = prepare_votes_data(users, votes, poll_id)
+    final_polls, final_users = prepare_votes_data(users, votes, poll_id)
 
-    save_polls_data(new_records[0])
-    save_user_data(new_records[1])
+    save_polls_data(final_polls)
+    save_user_data(final_users)
   end
 
   # verifies U and P
@@ -176,11 +176,11 @@ class User
   # session[:user_id] following new user creation.
   def self.get_id(username)
     users = read_user_data
-    id = users.find { |_, value| value[:username] == username }[0]
-    id
+    users.find { |_, value| value[:username] == username }[0]
   end
 
-  # returns an array of vote, delete, and/or reset permissions for calling poll
+  # returns an array of user's vote, delete, and/or reset permissions for passed
+  # poll
   def permissions(poll_path, polls = read_polls_data)
     poll = Poll.new(poll_path, polls)
 
@@ -242,7 +242,7 @@ class Poll
     options.values.reduce(:+)
   end
 
-  # creates new poll, returns path
+  # creates and saves new poll, returns path
   def self.create(name, votes_per_user, author_id, description, options)
     id = generate_uuid
     created = Time.new
@@ -289,17 +289,22 @@ class Poll
 
   # returns poll creation error string
   def self.creation_error(name, max_votes, options)
-    if !(1..150).cover?(name.length)
+    if wrong_size?(name)
       'Sorry, poll name must be between 1 and 150 characters.'
     elsif max_votes.to_i < 3
       'Sorry, you must give users at least 3 votes.'
-    elsif options.any? { |option| !(1..150).cover?(option.length) }
+    elsif options.any? { |option| wrong_size?(option) }
       'Sorry, option names must be between 1 and 150 characters.'
     elsif options.size < 3
       'Sorry, polls must have at least 3 options.'
     elsif options.map(&:strip).uniq.size != options.size
       'Sorry, all option names must be unique.'
     end
+  end
+
+  # helper for user creation error, checks length of string
+  def self.wrong_size?(string)
+    !(1..150).cover?(string.length)
   end
 
   # deletes a poll. USER VOTE RECORDS FOR DELETED POLLS ARE PRESERVED
@@ -360,7 +365,7 @@ helpers do
     session[:user_id]
   end
 
-  # gets user's' permissions for passed-in poll, returns empty array
+  # gets user's permissions for passed-in poll, returns empty array
   # if no current user
   def get_permissions(poll_path, polls = read_polls_data)
     if signed_in?
@@ -370,25 +375,42 @@ helpers do
     end
   end
 
+  # last real programming I did for this app. This was a horrible mess of
+  # nested conditionals in two different views and is poetry compared to what
+  # it was.
+  # Constructs an HTML string of links and buttons based on the user's
+  # permissions for the passed-in poll.
   def build_actions(path, polls = read_polls_data)
     permissions = get_permissions(path, polls)
-    actions = ''
-    vote_link = "<a href = \"polls/#{path}/vote\">Vote</a>"
-    delete_button = <<-HEREDOC
-<form class="inline delete" method="post" action="/polls/#{path}/delete" >
-  <button class="delete" type="submit">Delete</button>
-</form>
-                    HEREDOC
-    reset_button = <<-HEREDOC
-<form class="inline reset" method="post" action="/polls/<%= data[:path] %>/reset" >
-  <button class="reset" type="submit">Reset</button>
-</form>
-                    HEREDOC
+    vote_link = "<a href = \"/polls/#{path}/vote\">Vote</a>"
 
+    delete_button = get_delete_button(path)
+    reset_button = get_reset_button(path)
+
+    actions = ''
     actions += " #{vote_link}" if permissions.include?('vote')
     actions += " #{delete_button}" if permissions.include?('delete')
     actions += " #{reset_button}" if permissions.include?('reset')
+
     actions
+  end
+
+  # generates HTML delete button string
+  def get_delete_button(path)
+    <<-HEREDOC
+<form class="inline delete" method="post" action="/polls/#{path}/delete" >
+  <button class="delete" type="submit">Delete</button>
+</form>
+    HEREDOC
+  end
+
+  # generates HTML reset button string
+  def get_reset_button(path)
+    <<-HEREDOC
+<form class="inline reset" method="post" action="/polls/#{path}/reset" >
+  <button class="reset" type="submit">Reset</button>
+</form>
+    HEREDOC
   end
 end
 
@@ -400,16 +422,14 @@ get '/' do
   redirect '/polls'
 end
 
-# homescreen, shows list of polls each with view results, vote
-# (if logged in and not voted), delete (if author or admin),
-# reset (if admin), has sign in or off button/sign in message, sign up
+# homescreen, shows list of polls each with available actions (view results,
+# vote, delete, reset). Has create poll link if appropriate.
 get '/polls' do
   @polls = read_polls_data
   erb :index
 end
 
-# individual results page including pie chart. shows vote (if logged in and
-# not voted), delete (if author or admin), reset (if admin) links
+# individual results page including pie chart. shows available actions.
 get '/polls/:poll/results' do
   @permissions = get_permissions(params[:poll])
   @poll = Poll.new(params[:poll])
@@ -433,8 +453,9 @@ end
 # process votes
 post '/polls/:poll/vote' do
   @poll = Poll.new(params[:poll])
+  permissions = get_permissions(@poll.path)
 
-  if !signed_in? || !@user.permissions(@poll.path).include?('vote')
+  if !signed_in? || !permissions.include?('vote')
     redirect '/polls/#{params[:poll]/results'
   end
 
@@ -487,6 +508,7 @@ get '/user/login' do
     session[:error] = 'You are already logged in.'
     redirect '/'
   end
+
   erb :log_in
 end
 
