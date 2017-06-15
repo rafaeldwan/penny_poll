@@ -21,14 +21,14 @@ ae5a6dd5-d7c9-4297-8803-946659e7b954:
   :votes_per_user: 25
   :description: What are the best animals?
   :options:
-    The whales!: 24
+    The whales!: 27
     The gorillas!: 13
-    The dogs!: 4
-    The cats!: 38
+    The dogs!: 12
+    The cats!: 42
     Eels!: 1
     All the bugs except the bees!: 0
     The bees!: 12
-    The wolves!: 6
+    The wolves!: 16
     Cows!: 2
 456abc:
   :name: What's the best decade?
@@ -98,7 +98,7 @@ a0e831de-cd2f-414c-b962-c27c6db2d9f3:
   :votes_per_user: 10
   :description: Who knows where it will land in the spectrum today.
   :options:
-    Blue: 2
-    Orangey-red: 0
-    Dark as night: 0
+    Blue: 6
+    Orangey-red: 2
+    Dark as night: 4
     It's falling...run!: 8

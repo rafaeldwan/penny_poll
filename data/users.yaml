@@ -64,6 +64,14 @@ b50ae6e-a4d2-42c3-a1de-6a3faf5eef0c:
         1970s: 0
         1920s: 0
         1990s: 4
+    a0e831de-cd2f-414c-b962-c27c6db2d9f3:
+      :name: What color is the sky?
+      :timestamp: 2017-06-14 23:17:38.748040495 +00:00
+      :votes:
+        Blue: 4
+        Orangey-red: 2
+        Dark as night: 4
+        It's falling...run!: 0
 6bf60593-61a4-4b6d-8f3d-10da8a0a2065:
   :username: johnny
   :password: "$2a$10$moDA0dV/FB7sJcAT.DIjc.itzUXKp14TiHBWTY4RLkRsiqUu.Sa6."
@@ -352,3 +360,26 @@ ea966c12-6aa9-46b8-8fee-c9eec7058697:
         Orangey-red: 0
         Dark as night: 0
         It's falling...run!: 8
+df552c3f-025b-422c-8b62-5af519fa55b6:
+  :username: maredwan@gmail.com
+  :password: "$2a$10$A6bulbIbAFgb9zT9mmouN.ljWUBzXOMpoFsoqnn9k2Pm/dh2OdaNS"
+  :created: 2017-06-14 14:29:52.263974905 +00:00
+  :votes: {}
+'09fc88f9-fefb-46e9-8546-2a75bf453184':
+  :username: bluezzy
+  :password: "$2a$10$XjQxYdVxSgpMWXzKk/yQ4OUKcwGnoQ8a.7t43lHxR/SDffYbI/Lea"
+  :created: 2017-06-14 14:54:44.667470719 +00:00
+  :votes:
+    4ff932f5-56b5-48a5-94e2-6509c8497878:
+      :name: Rate the animals!
+      :timestamp: 2017-06-14 14:57:34.049775045 +00:00
+      :votes:
+        The whales!: 3
+        The gorillas!: 0
+        The dogs!: 8
+        The cats!: 4
+        Eels!: 0
+        All the bugs except the bees!: 0
+        The bees!: 0
+        The wolves!: 10
+        Cows!: 0

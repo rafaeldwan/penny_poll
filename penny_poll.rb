@@ -225,6 +225,11 @@ class Poll
   attr_reader :options, :id, :name, :max_votes, :author, :description, :path
 
   def initialize(path, polls = read_polls_data)
+    unless polls.find { |_, poll| poll[:path] == path }
+      @name = :no_such_poll
+      return
+    end
+
     @path = path
     @id = polls.find { |_, poll| poll[:path] == @path }[0]
 
@@ -264,7 +269,7 @@ class Poll
   # removes /\W/ characters, replaces spaces with underscores,
   # downcases, checks for existing path and appends appropriate number if found
   def self.create_poll_path(name, polls)
-    path = path[0, 20] if path.size > 20
+    path = name[0, 20] if name.size > 20
     path = name.strip
     path.downcase!
 
@@ -412,6 +417,14 @@ helpers do
 </form>
     HEREDOC
   end
+
+  # redirects to hom with 404 error if poll doesn't exist
+  def poll_check
+    if @poll.name == :no_such_poll
+    session[:error] = "404: That's not a thing!"
+    redirect '/'
+    end
+  end
 end
 
 before do
@@ -420,6 +433,11 @@ end
 
 get '/' do
   redirect '/polls'
+end
+
+not_found do
+  session[:error] = "That's not a thing!"
+  redirect '/'
 end
 
 # homescreen, shows list of polls each with available actions (view results,
@@ -431,8 +449,10 @@ end
 
 # individual results page including pie chart. shows available actions.
 get '/polls/:poll/results' do
-  @permissions = get_permissions(params[:poll])
   @poll = Poll.new(params[:poll])
+  poll_check
+  @permissions = get_permissions(params[:poll])
+
   @chart_data = @poll.options.map { |name, votes| [name, votes.to_s] }
 
   erb :poll_results
@@ -440,8 +460,10 @@ end
 
 # vote page for each poll
 get '/polls/:poll/vote' do
-  @permissions = get_permissions(params[:poll])
   @poll = Poll.new(params[:poll])
+  poll_check
+
+  @permissions = get_permissions(params[:poll])
 
   if signed_in? && @permissions.include?('vote')
     erb :poll_vote
@@ -453,6 +475,8 @@ end
 # process votes
 post '/polls/:poll/vote' do
   @poll = Poll.new(params[:poll])
+  poll_check
+
   permissions = get_permissions(@poll.path)
 
   if !signed_in? || !permissions.include?('vote')
@@ -580,7 +604,7 @@ end
 # delete poll
 post '/polls/:poll/delete' do
   @permissions = get_permissions(params[:poll])
-  if !signed_in? || !@permissions.include?('delete')
+  unless @permissions.include?('delete')
     session[:error] = "You can't do that."
     redirect '/'
   end
