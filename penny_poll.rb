@@ -269,8 +269,8 @@ class Poll
   # removes /\W/ characters, replaces spaces with underscores,
   # downcases, checks for existing path and appends appropriate number if found
   def self.create_poll_path(name, polls)
-    path = name[0, 20] if name.size > 20
-    path = name.strip
+    path = name[0, 20] if name.size > 20 || name
+    path = path.strip
     path.downcase!
 
     path.gsub!(/[^\w\s]/, '')
